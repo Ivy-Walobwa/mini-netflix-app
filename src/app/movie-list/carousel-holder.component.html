@@ -1,0 +1,62 @@
+<div style="text-align:center">
+    <h3>
+      Trending Now
+    </h3>
+      <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let movie of movies">
+        <ng-template carouselSlide [id]="movie.objectId">
+            <div>
+                <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+              <p class="title">{{movie.title}}</p>
+              <small>{{movie.releaseYear}}</small>
+            </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+
+    <h3>
+        Comedy
+      </h3>
+        <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let movie of movies">
+          <ng-template carouselSlide [id]="movie.objectId">
+              <div>
+                  <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                <p class="title">{{movie.title}}</p>
+                <small>{{movie.releaseYear}}</small>
+              </div>
+          </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+
+    <h3>
+        Action
+      </h3>
+        <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let movie of movies">
+          <ng-template carouselSlide [id]="movie.objectId">
+              <div>
+                  <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                <p class="title">{{movie.title}}</p>
+                <small>{{movie.releaseYear}}</small>
+              </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+
+      <h3>
+          Romance
+        </h3>
+          <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let movie of movies">
+            <ng-template carouselSlide [id]="movie.objectId">
+                <div>
+                    <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                  <p class="title">{{movie.title}}</p>
+                  <small>{{movie.releaseYear}}</small>
+                </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+</div>
+

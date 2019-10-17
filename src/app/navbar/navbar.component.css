@@ -1,0 +1,27 @@
+nav{
+  background: black!important;
+}
+.logo{
+  font-weight:bold;
+  font-size: 35px;
+  color: rgb(216, 31, 38);
+  margin-right: 70px;
+}
+
+input[type="text"]{
+  border: none;
+  border-width: 0;
+  background: transparent;
+  outline: transparent;
+  color: white;
+}
+
+input[type="text"]:focus{
+  outline: none!important;
+}
+@media(max-width:768px){
+   .dropdown, .bell-icon{
+    display: none;
+  }
+}
+

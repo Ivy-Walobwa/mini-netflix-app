@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand logo" href="#">Netflix</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav  justify-content-center">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Series</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Movies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Originals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Recently Added</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">My List</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <form class="form-inline md-form form-sm mt-0">
+            <fa-icon [icon]='faSearch'></fa-icon>
+            <input class="form-control form-control-sm ml-3 w-75 " type="text" placeholder="Search"
+              aria-label="Search">
+        </form>
+        <li class="nav-item bell-icon">
+            <a class="nav-link" href="#"><fa-icon [icon]='faBell'></fa-icon></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><fa-icon [icon]='faUser'></fa-icon></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">User1</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">User2</a>
+            <a class="dropdown-item" href="#">User3</a>
+            <a class="dropdown-item" href="#">Kids</a>
+          </div>
+        </li>
+
+    </ul>
+  </div>
+</nav>
