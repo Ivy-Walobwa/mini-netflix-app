@@ -8,6 +8,10 @@ nav{
   margin-right: 70px;
 }
 
+li > a.active {
+  color: rgb(216, 31, 38);
+}
+
 input[type="text"]{
   border: none;
   border-width: 0;

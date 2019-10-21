@@ -1,0 +1,23 @@
+.card{
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+h3{
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.card-body{
+  margin-top: 30px;
+}
+
+.spacing{
+  margin: 20px;
+}
+
+@media(max-width:768px){
+  .body{
+    margin-top: 40px;
+  }
+}

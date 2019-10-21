@@ -6,7 +6,7 @@
       <ng-container *ngFor="let movie of movies">
         <ng-template carouselSlide [id]="movie.objectId">
             <div>
-                <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
               <p class="title">{{movie.title}}</p>
               <small>{{movie.releaseYear}}</small>
             </div>
@@ -21,7 +21,7 @@
         <ng-container *ngFor="let movie of movies">
           <ng-template carouselSlide [id]="movie.objectId">
               <div>
-                  <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                  <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
                 <p class="title">{{movie.title}}</p>
                 <small>{{movie.releaseYear}}</small>
               </div>
@@ -36,7 +36,7 @@
         <ng-container *ngFor="let movie of movies">
           <ng-template carouselSlide [id]="movie.objectId">
               <div>
-                  <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                  <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
                 <p class="title">{{movie.title}}</p>
                 <small>{{movie.releaseYear}}</small>
               </div>
@@ -51,7 +51,7 @@
           <ng-container *ngFor="let movie of movies">
             <ng-template carouselSlide [id]="movie.objectId">
                 <div>
-                    <a href="#"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                    <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
                   <p class="title">{{movie.title}}</p>
                   <small>{{movie.releaseYear}}</small>
                 </div>
