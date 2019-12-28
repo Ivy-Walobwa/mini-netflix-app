@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from './shared/movies.service';
+import { MoviesService } from '../shared/movies.service';
 
 @Component({
   template: `

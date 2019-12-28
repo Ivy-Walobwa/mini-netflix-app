@@ -11,9 +11,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { CarouselHolderComponent } from './movie-list/carousel-holder.component';
-import { MoviesService } from './movie-list/shared/movies.service';
+import { MoviesService } from './shared/movies.service';
 import { AppRoutingModule } from './app-routing.module';
-import { MoviDetailsComponent } from './movie-list/movi-details/movi-details.component';
+import { MoviDetailsComponent } from './movi-details/movi-details.component';
 
 
 @NgModule({

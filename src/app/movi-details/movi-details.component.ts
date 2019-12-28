@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {  OnInit, Component } from '@angular/core';
 import { MoviesService } from '../shared/movies.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,3 +18,4 @@ export class MoviDetailsComponent implements OnInit {
   }
 
 }
+cd
