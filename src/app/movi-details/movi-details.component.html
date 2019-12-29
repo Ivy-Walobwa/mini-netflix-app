@@ -7,7 +7,7 @@
 
       <div class="col-lg-4">
         <img class="center-block img-responsive"
-              [src]='movie.image.url'
+              [src]='imageBaseUrl+movie.poster_path'
               [style.width.px]='300'
               [style.margin.px]='2'
               [title]='movie.title'
@@ -17,21 +17,21 @@
       <div class="col-lg-8 body">
         <div class="row spacing">
           <h5 class="col-lg-3">Description</h5>
-          <div class="col-lg-9">{{movie.description}}</div>
+          <div class="col-lg-9">{{movie.overview}}</div>
         </div>
         <div class="row row spacing" >
           <h5 class="col-lg-3">Genre</h5>
           <div class="col-lg-9">
-            <span *ngFor='let genres of movie.genre'> {{genres }} </span>
+            <span *ngFor='let genres of movie.genres'> {{genres.name}} </span>
           </div>
         </div>
         <div class="row row spacing">
           <h5 class="col-lg-3">Release Year</h5>
-          <div class="col-lg-9">{{movie.releaseYear}}</div>
+          <div class="col-lg-9">{{movie.release_date}}</div>
         </div>
         <div class="row row spacing">
           <h5 class="col-lg-3">Rating</h5>
-          <div class="col-lg-9">{{movie.rating}}</div>
+          <div class="col-lg-9">{{movie.vote_average}}</div>
         </div>
 
       </div>

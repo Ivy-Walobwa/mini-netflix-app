@@ -21,6 +21,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class CarouselHolderComponent {
 
   @Input() movies: any;
+  @Input() imageUrl: any;
 
   customOptions: OwlOptions = {
     loop: true,

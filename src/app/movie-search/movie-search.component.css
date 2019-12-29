@@ -1,0 +1,35 @@
+input[type="text"]{
+  border: none;
+  border-width: 0;
+  background: transparent;
+  outline: transparent;
+  color: white;
+}
+
+input[type="text"]:focus{
+  outline: none!important;
+}
+
+.search-result li {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.search-result li:hover {
+  background-color: #607D8B;
+}
+
+.search-result li a {
+  color: #888;
+  display: block;
+  text-decoration: none;
+}
+
+.search-result li a:hover {
+  color: white;
+}
+.search-result li a:active {
+  color: white;
+}
+
+

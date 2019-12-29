@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../shared/movies.service';
+import { MoviesService } from '../services/movies.service';
+import { Movie } from '../models/movie';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   template: `
   <app-navbar></app-navbar>
   <div></div>
-  <app-carousel-holder  [movies]='moviesArray'></app-carousel-holder>
+  <app-carousel-holder  [movies]='moviesArray' [imageUrl]='imageBaseUrl'></app-carousel-holder>
   `,
   styles: [`
   div{
@@ -15,13 +17,17 @@ import { MoviesService } from '../shared/movies.service';
 })
 
 export class MovieListComponent implements OnInit {
-  moviesArray: any;
+  moviesArray: Movie[];
+  imageBaseUrl = 'https://image.tmdb.org/t/p/original';
 
-  constructor(private movieService: MoviesService) {
+  constructor(private movieService: MoviesService,
+              private route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    this.moviesArray = this.movieService.getMovies();
+    const resolvedData: Movie[] = this.route.snapshot.data.resolvedMovies;
+    this.moviesArray = resolvedData;
   }
+
 }

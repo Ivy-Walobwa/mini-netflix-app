@@ -1,6 +1,7 @@
 import {  OnInit, Component } from '@angular/core';
-import { MoviesService } from '../shared/movies.service';
+import { MoviesService } from '../services/movies.service';
 import { ActivatedRoute } from '@angular/router';
+import { SingleMovie } from '../models/movie';
 
 @Component({
   templateUrl: './movi-details.component.html',
@@ -9,13 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 
 export class MoviDetailsComponent implements OnInit {
 
-  movie: any;
+  movie: SingleMovie;
+  imageBaseUrl = 'https://image.tmdb.org/t/p/original';
 
   constructor( private movieService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.movie = this.movieService.getMovie(+this.route.snapshot.params.objectId);
+    const movieId: number = +this.route.snapshot.params.id;
+    this.movieService.getMovie(movieId)
+      .subscribe(res => this.movie = res);
   }
 
 }
-cd

@@ -4,11 +4,11 @@
     </h3>
       <owl-carousel-o [options]="customOptions">
       <ng-container *ngFor="let movie of movies">
-        <ng-template carouselSlide [id]="movie.objectId">
+        <ng-template carouselSlide [id]="movie.id">
             <div>
-                <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                <a [routerLink]="['/home', movie.id]"><img [src]="imageUrl+movie.poster_path" [alt]="movie.title" [title]="movie.title"></a>
               <p class="title">{{movie.title}}</p>
-              <small>{{movie.releaseYear}}</small>
+              <small>{{movie.release_date}}</small>
             </div>
         </ng-template>
       </ng-container>
@@ -17,46 +17,30 @@
     <h3>
         Comedy
       </h3>
-        <owl-carousel-o [options]="customOptions">
-        <ng-container *ngFor="let movie of movies">
-          <ng-template carouselSlide [id]="movie.objectId">
+        <owl-carousel-o [options]="customOptions" >
+          <ng-container *ngFor="let movie of movies">
+            <ng-template carouselSlide [id]="movie.id" *ngIf="movie.genre_ids.includes(35)">
               <div>
-                  <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
+                <a [routerLink]="['/home', movie.id]"><img [src]='imageUrl+movie.poster_path' [alt]="movie.title" [title]="movie.title"></a>
                 <p class="title">{{movie.title}}</p>
-                <small>{{movie.releaseYear}}</small>
+                <small>{{movie.release_date}}</small>
               </div>
-          </ng-template>
-        </ng-container>
-    </owl-carousel-o>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
 
     <h3>
-        Action
+       Drama
       </h3>
         <owl-carousel-o [options]="customOptions">
-        <ng-container *ngFor="let movie of movies">
-          <ng-template carouselSlide [id]="movie.objectId">
-              <div>
-                  <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
-                <p class="title">{{movie.title}}</p>
-                <small>{{movie.releaseYear}}</small>
-              </div>
-          </ng-template>
-        </ng-container>
-      </owl-carousel-o>
-
-      <h3>
-          Romance
-        </h3>
-          <owl-carousel-o [options]="customOptions">
           <ng-container *ngFor="let movie of movies">
-            <ng-template carouselSlide [id]="movie.objectId">
-                <div>
-                    <a [routerLink]="['/home', movie.objectId]"><img [src]="movie.image.url" [alt]="movie.title" [title]="movie.title"></a>
-                  <p class="title">{{movie.title}}</p>
-                  <small>{{movie.releaseYear}}</small>
-                </div>
+            <ng-template carouselSlide [id]="movie.id" *ngIf="movie.genre_ids.includes(18)">
+              <div>
+                <a [routerLink]="['/home', movie.id]"><img [src]="imageUrl+movie.poster_path" [alt]="movie.title" [title]="movie.title"></a>
+                <p class="title">{{movie.title}}</p>
+                <small>{{movie.release_date}}</small>
+              </div>
             </ng-template>
           </ng-container>
         </owl-carousel-o>
 </div>
-
