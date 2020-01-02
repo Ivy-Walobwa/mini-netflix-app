@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -15,7 +15,9 @@ import { MoviesService } from './services/movies.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MoviDetailsComponent } from './movi-details/movi-details.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
-
+import { AddHeaderInterceptor } from './http-interceptors/add-header.interceptor';
+import { LogResponseInterceptor } from './http-interceptors/log-response.interceptor';
+import { CacheInterceptor } from './http-interceptors/cache.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,12 @@ import { MovieSearchComponent } from './movie-search/movie-search.component';
     RouterModule.forRoot([]),
     AppRoutingModule
   ],
-  providers: [MoviesService],
+  providers: [
+    MoviesService,
+    { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
