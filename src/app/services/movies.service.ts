@@ -4,6 +4,7 @@ import { Observable, throwError, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 import { MovieDbResponse, SingleMovie, Movie } from '../models/movie';
+import { Router } from '@angular/router';
 
 
 @Injectable()
@@ -13,7 +14,7 @@ export class MoviesService {
   private apiUrl = 'https://api.themoviedb.org/3/movie';
   private searchUrl = 'https://api.themoviedb.org/3/search/movie';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
    }
 
   // get movie collection
@@ -58,6 +59,7 @@ export class MoviesService {
       // error for user consumption
       console.log(`${operation} failed: ${error.message}`);
 
+      this.router.navigate(['/404'], {skipLocationChange:true});
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

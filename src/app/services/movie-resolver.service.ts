@@ -12,7 +12,7 @@ export class MovieResolverService implements Resolve<Movie[]> {
 
   constructor(private movieService: MoviesService) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Movie[]>{
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Movie[]> {
     return this.movieService.getMovies()
       .pipe(
         catchError(err => of(err))

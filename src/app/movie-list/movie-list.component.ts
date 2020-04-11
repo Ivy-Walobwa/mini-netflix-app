@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../services/movies.service';
 import { Movie } from '../models/movie';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   template: `
-  <app-navbar></app-navbar>
   <div></div>
   <app-carousel-holder  [movies]='moviesArray' [imageUrl]='imageBaseUrl'></app-carousel-holder>
   `,
@@ -20,8 +18,7 @@ export class MovieListComponent implements OnInit {
   moviesArray: Movie[];
   imageBaseUrl = 'https://image.tmdb.org/t/p/original';
 
-  constructor(private movieService: MoviesService,
-              private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
 
   }
 

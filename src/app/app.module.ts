@@ -18,6 +18,7 @@ import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { AddHeaderInterceptor } from './http-interceptors/add-header.interceptor';
 import { LogResponseInterceptor } from './http-interceptors/log-response.interceptor';
 import { CacheInterceptor } from './http-interceptors/cache.interceptor';
+import { Err404Component } from './err404/err404.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CacheInterceptor } from './http-interceptors/cache.interceptor';
     MovieListComponent,
     CarouselHolderComponent,
     MoviDetailsComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
+    Err404Component
   ],
   imports: [
     BrowserModule,
@@ -35,14 +37,18 @@ import { CacheInterceptor } from './http-interceptors/cache.interceptor';
     BrowserAnimationsModule,
     FontAwesomeModule,
     RouterModule.forRoot([]),
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     MoviesService,
     { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LogResponseInterceptor,
+      multi: true,
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
