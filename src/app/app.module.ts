@@ -36,7 +36,7 @@ import { Err404Component } from './err404/err404.component';
     CarouselModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
     AppRoutingModule,
   ],
   providers: [
