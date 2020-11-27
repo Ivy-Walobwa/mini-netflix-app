@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { Err404Component } from './err404.component';
 
@@ -6,7 +6,7 @@ describe('Err404Component', () => {
   let component: Err404Component;
   let fixture: ComponentFixture<Err404Component>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ Err404Component ]
     })
